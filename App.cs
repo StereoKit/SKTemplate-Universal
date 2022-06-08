@@ -1,5 +1,4 @@
 ﻿using StereoKit;
-using System.Numerics;
 
 namespace StereoKitApp
 {
@@ -13,8 +12,8 @@ namespace StereoKitApp
 
 		Pose  cubePose = new Pose(0, 0, -0.5f, Quat.Identity);
 		Model cube;
-		Matrix4x4 floorTransform = Matrix.TS(new Vector3(0, -1.5f, 0), new Vector3(30, 0.1f, 30));
-		Material  floorMaterial;
+		Matrix   floorTransform = Matrix.TS(new Vec3(0, -1.5f, 0), new Vec3(30, 0.1f, 30));
+		Material floorMaterial;
 
 		public void Init()
 		{
