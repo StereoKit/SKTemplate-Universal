@@ -18,6 +18,8 @@
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WindowsXamlEnableOverview>true</WindowsXamlEnableOverview>
     <AppxPackageSigningEnabled>false</AppxPackageSigningEnabled>
+    <SKAssetFolder>../../Assets</SKAssetFolder>
+    <SKAssetDestination>Assets</SKAssetDestination>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM64'">
     <DebugSymbols>true</DebugSymbols>
@@ -90,16 +92,9 @@
     <Content Include="Logo\Logo-Wide300.png" />
     <Content Include="Properties\Default.rd.xml" />
   </ItemGroup>
-  <!-- Copy assets, and build the app's shaders into the final app folder -->
-  <ItemGroup>
-    <Content Include="$(SolutionDir)Assets\**">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Link>Assets\%(RecursiveDir)%(Filename)%(Extension)</Link>
-    </Content>
-  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.2.9" />
-    <PackageReference Include="StereoKit" Version="0.3.6" />
+    <PackageReference Include="StereoKit" Version="0.3.7-preview.6" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\StereoKitApp.csproj">

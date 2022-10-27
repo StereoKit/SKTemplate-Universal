@@ -26,6 +26,8 @@
     <AndroidEnableSGenConcurrent>true</AndroidEnableSGenConcurrent>
     <AndroidUseAapt2>true</AndroidUseAapt2>
     <AndroidHttpClientHandlerType>Xamarin.Android.Net.AndroidClientHandler</AndroidHttpClientHandlerType>
+    <SKAssetFolder>../../Assets</SKAssetFolder>
+    <SKAssetDestination>Assets</SKAssetDestination>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>True</DebugSymbols>
@@ -69,14 +71,6 @@
     <None Include="Resources\AboutResources.txt" />
     <None Include="Properties\AndroidManifest.xml" />
   </ItemGroup>
-  <!-- Copy assets, and build the app's shaders into the final app folder -->
-  <ItemGroup>
-    <AndroidAsset Include="$(SolutionDir)Assets\**">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Link>Assets\%(RecursiveDir)%(Filename)%(Extension)</Link>
-    </AndroidAsset>
-    <SKShader Include="$(SolutionDir)Assets\**\*.hlsl" BuildRoot="$(SolutionDir)Assets" BuildTo="Assets" />
-  </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\activity_main.xml">
       <SubType>Designer</SubType>
@@ -108,7 +102,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="StereoKit">
-      <Version>0.3.6</Version>
+      <Version>0.3.7-preview.6</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Android.Support.Design" Version="28.0.0.3" />
     <PackageReference Include="Xamarin.Android.Support.Core.Utils" Version="28.0.0.3" />
