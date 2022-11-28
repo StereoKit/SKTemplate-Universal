@@ -42,6 +42,11 @@ namespace StereoKit_Android
 			Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
 			base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
 		}
+		protected override void OnDestroy()
+		{
+			SK.Quit();
+			base.OnDestroy();
+		}
 
 		static bool running = false;
 		void Run(IntPtr activityHandle)
