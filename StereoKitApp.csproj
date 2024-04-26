@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <SKAutoFindShaders>False</SKAutoFindShaders>
   </PropertyGroup>
 
   <!-- Hide platform project folders from the solution explorer -->
@@ -12,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="StereoKit" Version="0.3.7-preview.6" />
+    <PackageReference Include="StereoKit" Version="0.3.9" />
   </ItemGroup>
 
 </Project>

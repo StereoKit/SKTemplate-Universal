@@ -93,8 +93,8 @@
     <Content Include="Properties\Default.rd.xml" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.2.9" />
-    <PackageReference Include="StereoKit" Version="0.3.7-preview.6" />
+    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.2.14" />
+    <PackageReference Include="StereoKit" Version="0.3.9" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\StereoKitApp.csproj">

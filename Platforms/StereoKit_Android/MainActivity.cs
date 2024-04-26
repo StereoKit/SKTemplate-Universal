@@ -1,15 +1,15 @@
 ﻿using Android.App;
-using Android.OS;
-using Android.Support.V7.App;
-using Android.Runtime;
-using Android.Views;
 using Android.Content;
-using StereoKit;
-using System;
 using Android.Graphics;
+using Android.OS;
+using Android.Runtime;
+using Android.Support.V7.App;
+using Android.Views;
 using Java.Lang;
-using System.Threading.Tasks;
+using StereoKit;
 using StereoKitApp;
+using System;
+using System.Threading.Tasks;
 
 namespace StereoKit_Android
 {

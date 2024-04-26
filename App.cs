@@ -5,14 +5,14 @@ namespace StereoKitApp
 	public class App
 	{
 		public SKSettings Settings => new SKSettings { 
-			appName           = "StereoKit Template",
-			assetsFolder      = "Assets",
-			displayPreference = DisplayMode.MixedReality
+			appName      = "StereoKit Template",
+			assetsFolder = "Assets",
+			mode         = AppMode.XR
 		};
 
-		Pose  cubePose = new Pose(0, 0, -0.5f, Quat.Identity);
+		Pose  cubePose = new Pose(0, 0, -0.5f);
 		Model cube;
-		Matrix   floorTransform = Matrix.TS(new Vec3(0, -1.5f, 0), new Vec3(30, 0.1f, 30));
+		Matrix   floorTransform = Matrix.TS(0, -1.5f, 0, new Vec3(30, 0.1f, 30));
 		Material floorMaterial;
 
 		public void Init()
@@ -20,16 +20,16 @@ namespace StereoKitApp
 			// Create assets used by the app
 			cube = Model.FromMesh(
 				Mesh.GenerateRoundedCube(Vec3.One * 0.1f, 0.02f),
-				Default.MaterialUI);
+				Material.UI);
 
-			floorMaterial = new Material(Shader.FromFile("floor.hlsl"));
+			floorMaterial = new Material("floor.hlsl");
 			floorMaterial.Transparency = Transparency.Blend;
 		}
 
 		public void Step()
 		{
-			if (SK.System.displayType == Display.Opaque)
-				Default.MeshCube.Draw(floorMaterial, floorTransform);
+			if (Device.DisplayBlend == DisplayBlend.Opaque)
+				Mesh.Cube.Draw(floorMaterial, floorTransform);
 
 			UI.Handle("Cube", ref cubePose, cube.Bounds);
 			cube.Draw(cubePose.ToMatrix());
