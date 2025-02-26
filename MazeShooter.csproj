@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net9.0</TargetFramework>
+		<OutputType>Exe</OutputType>
+
+		<ApplicationIcon>Platforms\Net\App.ico</ApplicationIcon>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<!--Don't compile Android code in this project, but do show it in the
+		    explorer window.-->
+		<Compile Remove="**\*.Android.cs" />
+		<Compile Remove="Platforms\Android\**" />
+		<None Include="**\*.Android.cs" />
+		<None Include="Platforms\Android\**" />
+
+		<Compile Remove="Projects\**" />
+		<EmbeddedResource Remove="Projects\**" />
+		<None Remove="Projects\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="StereoKit" Version="0.3.10" />
+	</ItemGroup>
+</Project>
